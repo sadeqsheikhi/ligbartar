@@ -20,9 +20,11 @@ class TeamAdmin(admin.ModelAdmin):
             output += f'<li style="dir:rtl; padding: 10px; margin-bottom:5px;' \
                       f' border-bottom:1px solid black; width:150px; text-align:right;' \
                       f'font-family: calibri; background:#44B78B; font-weight: bold; border-radius:5px">' \
-                      f'<a href="{reverse("admin:team_player_player_change", args=(coach.id,))}"' \
+                      f'<a href="{reverse("admin:team_player_coachassistant_change", args=(coach.id,))}"' \
                       f'style="color:white; text-style:underline">' \
                       f'{coach.name} - {coach.last_name}' \
+                      f'</a><a style="float:left; color:pink; font-size:25px;" href="' \
+                      f'{reverse("admin:team_player_coachassistant_delete", args=(coach.id,))}">&times;' \
                       f'</a></li>'
         output += '</ul>'
         return mark_safe(output)
@@ -38,6 +40,8 @@ class TeamAdmin(admin.ModelAdmin):
                       f'<a href="{reverse("admin:team_player_player_change", args=(player.id,))}"' \
                       f'style="color:white; text-style:underline">' \
                       f'{player.name} - {player.last_name}' \
+                      f'</a><a style="float:left; color:pink; font-size:25px;" href="' \
+                      f'{reverse("admin:team_player_player_delete", args=(player.id,))}">&times;' \
                       f'</a></li>'
         output += '</ul>'
         return mark_safe(output)

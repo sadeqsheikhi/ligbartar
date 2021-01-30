@@ -28,11 +28,19 @@ class Team(models.Model):
     wins = models.IntegerField()
     looses = models.IntegerField()
 
-    def get_players(self):
+    def print_players(self):
         players = Player.objects.filter(teamid=self.id)
         output = "<ul>"
         for player in players:
             output += f'<li>{player.name} - {player.last_name}</li>'
+        output += '</ul>'
+        return output
+
+    def print_coach_assistants(self):
+        coaches = Player.objects.filter(teamid = self.id)
+        output = "<ul>"
+        for coach in coaches:
+            output += f'<li>{coach.name} - {coach.last_name}</li>'
         output += '</ul>'
         return output
 
