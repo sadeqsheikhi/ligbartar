@@ -5,6 +5,7 @@ This Project Is developed with 'Django Python Web Framework' so the latest versi
 ```sh
     pip install django
     pip intall mysqlclient
+    pip install django-admin-interface
 ```
 for running the server and the project run the following command in the base directory
 ```sh
@@ -26,5 +27,7 @@ DATABASES = {
 ```
 --------------------------------------------------------------------------------------
 ADMIN PANEL LOGIN INFO:
+```
 USERNAME: sadeq 
 PASSWORD: 12345
+```
